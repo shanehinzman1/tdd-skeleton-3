@@ -1,0 +1,16 @@
+pluginManagement {
+    repositories {
+        maven {
+            url "https://nexus.train.chikli.com/repository/maven-public/"
+            credentials {
+                username "training"
+                password "NmJD3sQHonswQDRgqZFzyUFFUQ3WMuzTTKwRmYJXkDyXHCkBJhfirGmTUXtiezeg"
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+}
+
+rootProject.name = 'tdd-skeleton'
