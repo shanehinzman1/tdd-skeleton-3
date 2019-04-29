@@ -44,7 +44,7 @@ publishing {
     }
     repositories {
         maven {
-            url "https://nexus.train.chikli.com/repository/maven-public/"
+            url "https://nexus.train.chikli.com/repository/maven-releases/"
             credentials {
                 username "training"
                 password "NmJD3sQHonswQDRgqZFzyUFFUQ3WMuzTTKwRmYJXkDyXHCkBJhfirGmTUXtiezeg"
