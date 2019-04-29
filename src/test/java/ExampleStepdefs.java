@@ -2,13 +2,13 @@ import cucumber.api.java8.En;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class MyStepdefs implements En {
+public class ExampleStepdefs implements En {
 
     private Something something;
 
     private String message;
 
-    public MyStepdefs() {
+    public ExampleStepdefs() {
         Given("^I have something$", () ->
                 something = new Something());
 
