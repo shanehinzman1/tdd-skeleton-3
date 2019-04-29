@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'maven-publish'
+    id 'com.github.johnrengelman.shadow' version '5.0.0'
     id 'com.github.ben-manes.versions' version '0.21.0'
 }
 
@@ -7,6 +9,12 @@ group 'com.chikli.demo'
 version '1.0'
 
 sourceCompatibility = 1.8
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.chikli.demo.Main'
+    }
+}
 
 repositories {
     maven {
@@ -26,4 +34,24 @@ dependencies {
     testImplementation 'org.assertj:assertj-core:3.12.2'
     testImplementation 'io.cucumber:cucumber-java8:4.3.0'
     testImplementation 'io.cucumber:cucumber-junit:4.3.0'
+}
+
+publishing {
+    publications {
+        shadow(MavenPublication) { publication ->
+            project.shadow.component(publication)
+        }
+    }
+    repositories {
+        maven {
+            url "https://nexus.train.chikli.com/repository/maven-public/"
+            credentials {
+                username "training"
+                password "NmJD3sQHonswQDRgqZFzyUFFUQ3WMuzTTKwRmYJXkDyXHCkBJhfirGmTUXtiezeg"
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
 }
