@@ -28,11 +28,6 @@ pipeline {
                 sh "./gradlew publish -Pversion=${artifactVersion}"
             }
         }
-        stage('tag git') {
-            steps {
-                sh "git tag -f release/${artifactVersion} && git push origin --tags --force"
-            }
-        }
     }
 
     post {
