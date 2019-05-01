@@ -15,10 +15,12 @@ public class Flight {
     private String arrivalTime;
     private String duration;
     private double price;
+    private int numOfPeople;
+    private int flightNumber;
 
     public static List<Flight> flights = new ArrayList();
 
-    public Flight(String departureCity, String arrivalCity, String departDate, String departTime, String arrivalTime, String duration, double price) {
+    public Flight(String departureCity, String arrivalCity, String departDate, String departTime, String arrivalTime, String duration, double price, int numOfPeople, int flightNumber) {
 
         this.departureCity = departureCity;
         this.arrivalCity = arrivalCity;
@@ -27,6 +29,8 @@ public class Flight {
         this.arrivalTime = arrivalTime;
         this.duration = duration;
         this.price = price;
+        this.numOfPeople = numOfPeople;
+        this.flightNumber = flightNumber;
     }
 
     public String getDepartureCity() {
@@ -83,6 +87,22 @@ public class Flight {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public int getNumOfPeople() {
+        return numOfPeople;
+    }
+
+    public void setNumOfPeople(int numOfPeople) {
+        this.numOfPeople = numOfPeople;
+    }
+
+    public int getFlightNumber() {
+        return flightNumber;
+    }
+
+    public void setFlightNumber(int flightNumber) {
+        this.flightNumber = flightNumber;
     }
 
     public static void addFlights(Flight flight){
