@@ -20,6 +20,10 @@ public class ExampleStepdefs implements En {
 
     public ExampleStepdefs() {
 
+        After( () -> {
+            testFlights.clear();
+        });
+
         Given("flights are available", () -> {
             Flight.addFlights(flight1);
             Flight.addFlights(flight2);
@@ -33,5 +37,18 @@ public class ExampleStepdefs implements En {
         Then("I see the available flights", () -> {
             assertThat(testFlights).containsExactly(flight1, flight2, flight3);
         });
+
+        Given("I have no flights", () -> {
+            assertThat(testFlights).isEmpty();
+        });
+
+        When("I add a flight", () -> {
+            Flight.addFlights(flight1);
+        });
+
+        Then("A flight is added to the flight list", () -> {
+            assertThat(Flight.getFlights()).containsExactly(flight1);
+        });
+
     }
 }
