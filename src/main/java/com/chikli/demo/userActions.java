@@ -52,7 +52,7 @@ public class userActions {
                 System.out.println("Please enter the flight duration (ex. '1hr 00m'): ");
                 String duration = reader.readLine();
                 System.out.println("Please enter the flight price (ex. '120.00'): ");
-                double price = Integer.parseInt(reader.readLine());
+                double price = Double.parseDouble(reader.readLine());
                 System.out.println("Please enter the amount of people (ex. '40'): ");
                 int numOfPeople = Integer.parseInt(reader.readLine());
                 System.out.println("Please enter the flight number (ex. '00007'): ");
