@@ -5,7 +5,7 @@ plugins {
     id 'com.github.ben-manes.versions' version '0.21.0'
 }
 
-group 'com.chikli.demo'
+group 'com.chikli.demo.shane'
 
 sourceCompatibility = 1.8
 
