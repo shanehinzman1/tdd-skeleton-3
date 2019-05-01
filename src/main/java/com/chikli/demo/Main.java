@@ -9,13 +9,6 @@ import java.util.List;
 public class Main {
 
     public static void main(final String[] args) throws IOException {
-        Flight flight1 = new Flight("CAK Akron, OH", "CLE Cleveland, OH", "05/01/2019", "8:00 AM", "8:15 AM", "0h 15m", 29.00, 100, 00001);
-        Flight flight2 = new Flight("CMH Columbus, OH", "MIA Miami, FL", "05/01/2019", "9:00 AM", "12:05 PM", "3h 15m", 149.00, 150, 00002);
-        Flight flight3 = new Flight("PIT Pittsburgh, PA", "TPA Tampa, FL", "05/01/2019", "2:15 PM", "4:55 PM", "2h 40m", 99.00, 100, 00003);
-        Flight.addFlights(flight1);
-        Flight.addFlights(flight2);
-        Flight.addFlights(flight3);
-
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         boolean run = true;
 
@@ -27,7 +20,8 @@ public class Main {
             System.out.println();
             System.out.println("Please select an option");
             System.out.println("1. Show flights");
-            System.out.println("2. Add a flight");
+            System.out.println("2. Import flight data");
+            System.out.println("3. Add a flight");
             System.out.println("0. Exit");
 
             int input = Integer.parseInt(reader.readLine());
