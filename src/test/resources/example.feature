@@ -4,3 +4,6 @@ Feature: This feature should do something
     Given I have something
     When I get a message from it
     Then it should say "Hello"
+
+  Scenario: Test
+    Given this is a test
