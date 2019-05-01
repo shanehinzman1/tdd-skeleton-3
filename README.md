@@ -5,7 +5,7 @@ Developer Instructions
 
 1. Fork this project
 
-1. Create a Jenkins pipeline to your project from: https://ci.chikli.train.com/blue
+1. Create a Jenkins pipeline to your project from: https://ci.train.chikli.com/blue
     * New Pipeline - follow the instructions provided there
 
 1. Configure Github to notify Jenkins when a checkin occurs via Webhooks
