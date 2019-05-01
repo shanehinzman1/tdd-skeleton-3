@@ -1,8 +1,37 @@
 package com.chikli.demo;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
-    public static void main(final String[] args) {
-        System.out.println("Hi There!");
+    public static void main(final String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        boolean run = true;
+
+        System.out.println("Welcome to Debbie's Unbelievable Hellicopters com.chikli.demo.Flight Reservation Software");
+        System.out.println("=========================================================================");
+        System.out.println();
+
+        while (run == true) {
+            System.out.println();
+            System.out.println("Please select an option");
+            System.out.println("1. Show flights");
+            System.out.println("0. Exit");
+
+            int input = Integer.parseInt(reader.readLine());
+
+            if (input == 0){
+                run = false;
+            }
+
+            else{
+                System.out.println("We good. Input is: " + input);
+            }
+
+        }
     }
 }
