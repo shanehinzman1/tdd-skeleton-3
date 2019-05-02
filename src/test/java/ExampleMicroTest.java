@@ -1,6 +1,10 @@
 import com.chikli.demo.Flight;
+import com.chikli.demo.Main;
 import org.junit.After;
+import org.junit.Ignore;
 import org.junit.Test;
+
+import java.io.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -41,5 +45,22 @@ public class ExampleMicroTest {
     @Test
     public void deleteFlightThatIsNotThere() {
         assertThat(Flight.deleteFlights(1)).isEqualTo("Error deleting flight");
+    }
+
+    @Test
+    public void userSelectOneThenZero() throws IOException {
+        BufferedReader reader = new BufferedReader(new StringReader("1\n0\n"));
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        Main.mainUserInput(reader, new PrintStream(outputStream));
+        assertThat(outputStream.toString()).contains("Welcome");
+    }
+
+    @Test
+    @Ignore
+    public void noUserInput() throws IOException {
+        BufferedReader reader = new BufferedReader(new StringReader(""));
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        Main.mainUserInput(reader, new PrintStream(outputStream));
+        assertThat(outputStream.toString()).contains("Welcome");
     }
 }

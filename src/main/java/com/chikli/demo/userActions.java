@@ -63,8 +63,12 @@ public class userActions {
                 Flight.deleteFlights(index - 1);
             }
 
+            else if (input == 9){
+                System.out.println("Issue processing input. Please try again");
+            }
+
             else{
-                System.out.println("Issue processing input: " + input);
+                System.out.println("Issue processing input. Please try again");
             }
 
     }
