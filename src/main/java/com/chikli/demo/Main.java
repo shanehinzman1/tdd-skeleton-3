@@ -19,9 +19,10 @@ public class Main {
         while (run == true) {
             System.out.println();
             System.out.println("Please select an option");
-            System.out.println("1. Show flights");
-            System.out.println("2. Import flight data");
+            System.out.println("1. Show current flights");
+            System.out.println("2. Import flight data from file");
             System.out.println("3. Add a flight");
+            System.out.println("4. Delete a flight");
             System.out.println("0. Exit");
 
             int input = Integer.parseInt(reader.readLine());

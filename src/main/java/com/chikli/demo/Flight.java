@@ -13,21 +13,19 @@ public class Flight {
     private String departDate;
     private String departTime;
     private String arrivalTime;
-    private String duration;
     private double price;
     private int numOfPeople;
     private int flightNumber;
 
     public static List<Flight> flights = new ArrayList();
 
-    public Flight(String departureCity, String arrivalCity, String departDate, String departTime, String arrivalTime, String duration, double price, int numOfPeople, int flightNumber) {
+    public Flight(String departureCity, String arrivalCity, String departDate, String departTime, String arrivalTime, double price, int numOfPeople, int flightNumber) {
 
         this.departureCity = departureCity;
         this.arrivalCity = arrivalCity;
         this.departDate = departDate;
         this.departTime = departTime;
         this.arrivalTime = arrivalTime;
-        this.duration = duration;
         this.price = price;
         this.numOfPeople = numOfPeople;
         this.flightNumber = flightNumber;
@@ -73,14 +71,6 @@ public class Flight {
         this.arrivalTime = arrivalTime;
     }
 
-    public String getDuration() {
-        return duration;
-    }
-
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
-
     public double getPrice() {
         return price;
     }
@@ -111,5 +101,32 @@ public class Flight {
 
     public static List<Flight> getFlights(){
         return flights;
+    }
+
+    public static String deleteFlights(int index){
+        try{
+            flights.remove(index);
+            return "Flight successfully deleted";
+        }
+        catch(Exception e) {
+            System.out.println("Uh oh, something went wrong.");
+            System.out.println("Here is the exception for Larry: " + e);
+            return "Error deleting flight";
+        }
+    }
+
+    public static void printflights (){
+        for(int i = 0; i < flights.size(); i++){
+            System.out.println("Index Number: " + (i + 1));
+            System.out.println("Departure City: " + flights.get(i).getDepartureCity());
+            System.out.println("Arrival City: " + flights.get(i).getArrivalCity());
+            System.out.println("Departure Date: " + flights.get(i).getDepartDate());
+            System.out.println("Departure Time: " + flights.get(i).getDepartTime());
+            System.out.println("Arrival Time: " + flights.get(i).getArrivalTime());
+            System.out.println("Price: " + flights.get(i).getPrice());
+            System.out.println("Number Of People: " + flights.get(i).getNumOfPeople());
+            System.out.println("Flight Number: " + flights.get(i).getFlightNumber());
+            System.out.println();
+        }
     }
 }
